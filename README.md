@@ -18,10 +18,17 @@ installation. Thanks to [this post](https://jkjung-avt.github.io/setting-up-nano
 best performances (don't forget to run `sudo nvpmodel -m 0`).
 See [this video](https://www.youtube.com/watch?v=jq1OqBe267A). 
 
-- You can connect to the board without screen keyboard and mouse using
-USB to TLL cables. See 
-[this post](https://desertbot.io/blog/jetson-nano-usb-login/) for more 
-instructions for that. 
+- You can connect to the board without screen keyboard and mouse 
+  - Using USB to TLL cables. See 
+  [this post](https://desertbot.io/blog/jetson-nano-usb-login/) for more 
+  instructions for that. 
+  - Through USB. Connect the board using te barrel jack. Connect USB to your host with 
+  `screen /dev/ttyACM0 115200`. I prefer using `tio`, it handles colors better and I 
+  can still use `Ctrl + A`. The command looks like `tio /dev/ttyACM0 --baudrate 115200`.
+  Consider using [termsize](https://github.com/akkana/scripts/blob/master/termsize) to 
+exploit the terminal size fully over serial terminal. 
+  - Through SSH, connect the board to wifi, get IP adress (with ifconfig for example)
+  and run `ssh <username>@<ipadress>`
 
 - [Nice post](https://www.hackster.io/news/getting-started-with-the-nvidia-jetson-nano-developer-kit-43aa7c298797) 
 about the Nano in general, sets up remote desktop. 
