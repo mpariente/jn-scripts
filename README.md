@@ -11,6 +11,7 @@ installation. Thanks to [this post](https://jkjung-avt.github.io/setting-up-nano
 
 ## Reminders
 - To use the GPIO remapping tool, run this once `sudo find /opt/nvidia/jetson-io/ -mindepth 1 -maxdepth 1 -type d -exec touch {}/__init__.py \` before running this `sudo /opt/nvidia/jetson-io/jetson-io.py`
+- Default python is linked to python2, unlink python2 and link python3 by default.
 
 
 ## Resources
@@ -41,3 +42,17 @@ about the Nano in general, sets up remote desktop.
 
 - Pisound support for Tinkerboard, 
 [see here](https://community.blokas.io/t/pisound-on-tinker-board/1015).
+
+
+### Tools 
+- `jtop` is nice to monitor GPU usage. Install with `sudo -H pip install jetson-stats`.
+See [here](https://github.com/rbonghi/jetson_stats).
+
+
+### Installing
+- Tensorflow, instructions [here](https://devtalk.nvidia.com/default/topic/1048776/jetson-nano/official-tensorflow-for-jetson-nano-/).
+- Soundcard : 
+```bash
+sudo apt install libffi-dev python-cffi
+sudo pip install soundcard 
+```
